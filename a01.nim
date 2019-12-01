@@ -7,7 +7,6 @@ func fuel2(x:int):int =
     let y = fuel(x)
     if y > 0: y+fuel2(y) else: 0
     
-
 let fuelSum = lines.map(fuel).sum
 let fuelSum2 = lines.map(fuel2).sum
 
