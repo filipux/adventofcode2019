@@ -8,4 +8,4 @@ advent of code solutions written in nim
 | 3 | Meh, messy code. Sets are pretty cool I guess. | [Day 3](https://github.com/filipux/adventofcode2019/blob/master/a03.nim) |
 | 4 | There is a clever solution hiding somewhere but I don't have the motivation to find it. | [Day 4](https://github.com/filipux/adventofcode2019/blob/master/a04.nim) |
 | 5 | CPU is progressing nicely. Still quite clean code. Lots of fun! | [Day 5](https://github.com/filipux/adventofcode2019/blob/master/a05.nim) |
-| 6 | Happy with my code. Figured out I could use sets to solve part 2 using the symmetric difference operator '-+-' 🥳  | [Day 6](https://github.com/filipux/adventofcode2019/blob/master/a06.nim) |
+| 6 | Happy with my code. Realized I could use sets to solve part 2 using the fancy symmetric difference operator '-+-' 🥳  | [Day 6](https://github.com/filipux/adventofcode2019/blob/master/a06.nim) |
