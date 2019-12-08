@@ -1,4 +1,4 @@
-import sequtils, strutils, algorithm, deques
+import sequtils, strutils, algorithm
 
 # --- Memory and registers ---
 
