@@ -3,46 +3,31 @@ import sequtils, strutils
 # --- Memory and registers ---
 
 type CPU = ref object
-    MEM:seq[int64]
-    INPUT:seq[int64]
-    IP:int64
-    BP:int64
+    MEM:seq[int]
+    INPUT:seq[int]
+    IP:int
+    BP:int
     HALTED:bool
-    OUTPUT:seq[int64]
+    OUTPUT:seq[int]
 
-# --- int64 helper converter ---
-
-# int is already int64 on osx but why not...
-converter seqIntToInt64(x:seq[int]): seq[int64] = x.mapIt(it.int64)
-
-# --- Helper functions and templates ---
-
-proc ensureCapacity(self:var seq[int64], address:int64) =
-    self.setLen(1 + max(self.len, address))
-
-proc getMemoryAddress(cpu:CPU, offset:int64):int64=
-    let opcodeOffset = [0,100,1000,10000][offset]
-    let mode = cpu.MEM[cpu.IP] div opcodeOffset mod 10
-    case mode:
-        of 0: result = cpu.MEM[cpu.IP + offset]
-        of 1: result = cpu.IP + offset
-        of 2: result = cpu.MEM[cpu.IP + offset] + cpu.BP
-        else: assert(false)
-        
-template A():int64 =
-    var address = getMemoryAddress(cpu, 1)
-    cpu.MEM.ensureCapacity(address)
-    cpu.MEM[address]
-
-template B():int64 =
-    var address = getMemoryAddress(cpu, 2)
-    cpu.MEM.ensureCapacity(address)
-    cpu.MEM[address]
+# --- Helper templates ---
     
-template C():int64 = 
-    var address = getMemoryAddress(cpu, 3)
-    cpu.MEM.ensureCapacity(address)
+template getMemoryForParameter(param:int):int =
+    let opcodeOffset = [0,100,1000,10000][param]
+    let mode = cpu.MEM[cpu.IP] div opcodeOffset mod 10
+    let address = case mode:
+        of 0: cpu.MEM[cpu.IP + param]
+        of 1: cpu.IP + param
+        of 2: cpu.MEM[cpu.IP + param] + cpu.BP
+        else: echo "invalid mode"; 0
+    
+    # Increase size of memory if needed
+    cpu.MEM.setLen(1 + max(cpu.MEM.len, address))
     cpu.MEM[address]
+        
+template A():int = getMemoryForParameter(1)
+template B():int = getMemoryForParameter(2)
+template C():int = getMemoryForParameter(3)
 
 # --- Execute opcode at current IP ---
 
