@@ -11,4 +11,4 @@ advent of code solutions written in nim
 | 6 | Happy with my code. Realized I could use sets to solve part 2 using the fancy symmetric difference operator '-+-' 🥳  | [Day 6](https://github.com/filipux/adventofcode2019/blob/master/a06.nim) |
 | 7 | Struggled a bit with this one. Had to refactor the code to allow multiple cpus. | [Day 7](https://github.com/filipux/adventofcode2019/blob/master/a07.nim) |
 | 8 | Got stuck for 15 minutes because I tried to do a reversed double-dot for loop (`for x in 10..0:`). This really should be allowed in Nim. | [Day 8](https://github.com/filipux/adventofcode2019/blob/master/a08.nim) |
-| 9 | IntCode computer again. Struggled with Nim, got some errors when trying to nest templates to much. Turned everything to int64. | [Day 9](https://github.com/filipux/adventofcode2019/blob/master/a09.nim) |
+| 9 | IntCode computer again. Struggled with Nim, got some errors when trying to nest templates to much, but it turned out nice in the end. | [Day 9](https://github.com/filipux/adventofcode2019/blob/master/a09.nim) |
