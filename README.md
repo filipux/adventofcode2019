@@ -18,3 +18,5 @@ advent of code solutions written in nim
 | 13 | It's a breakout game! Easy problem and cool visualization! :D | [Day 13](https://github.com/filipux/adventofcode2019/blob/master/a13.nim) |
 | 14 | Gahhh, this one took alot of time to solve. Strange equation solving and graphs. Solved part 2 using a home made binary search. | [Day 14](https://github.com/filipux/adventofcode2019/blob/master/a14.nim) |
 | 15 | IntCode + Pathfinding. Learned how to do a breadth first search using a queue.| [Day 15](https://github.com/filipux/adventofcode2019/blob/master/a15.nim) |
+| 16 | Patterns and repetitions. I have yet to solve Part 2. | [Day 16](https://github.com/filipux/adventofcode2019/blob/master/a16.nim) |
+| 17 | Droid IntCode stuff. The most horrible code written in the history of the human race. Don't look.| [Day 17](https://github.com/filipux/adventofcode2019/blob/master/a17.nim) |
